@@ -11,10 +11,10 @@ fi
 
 sed -i "s/command: \[\"-c\", \".*\"\]/command: \[\"-c\", \"$relay_node_id\"\]/" docker-compose.yaml
 
-docker-compose up -d
+docker compose up -d
 
 docker cp ehco ehco:/usr/bin/ehco
 docker restart ehco
-
-docker logs -n 20 ehco
+sleep 3 
+docker logs -f ehco
 
