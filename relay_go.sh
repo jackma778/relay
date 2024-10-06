@@ -16,5 +16,5 @@ docker compose up -d
 docker cp ehco ehco:/usr/bin/ehco
 docker restart ehco
 sleep 3 
-docker logs -f ehco
+docker logs -n 10 ehco
 
