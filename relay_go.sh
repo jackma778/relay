@@ -16,5 +16,15 @@ docker compose up -d
 docker cp ehco ehco:/usr/bin/ehco
 docker restart ehco
 sleep 3 
+  if crontab -l | grep -q "ehco"; then
+    echo "pass"
+  else
+    echo "add crontab"
+    minute=$(shuf -i 0-59 -n 1)
+    hour=$(shuf -i 3-6 -n 1)
+    weekday=$(shuf -i 0-6 -n 1)
+    (crontab -l ; echo "$minute $hour * * $weekday docker restart ehco") | crontab -
+    fi
+  fi
 docker logs -n 10 ehco
 

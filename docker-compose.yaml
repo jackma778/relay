@@ -11,4 +11,4 @@ services:
       options:
         max-size: "5k"
         max-file: "2"
-    command: ["-c", "287123"]
+    command: ["-c", ""]
