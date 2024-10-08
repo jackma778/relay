@@ -24,7 +24,6 @@ sleep 3
     hour=$(shuf -i 3-6 -n 1)
     weekday=$(shuf -i 0-6 -n 1)
     (crontab -l ; echo "$minute $hour * * $weekday docker restart ehco") | crontab -
-    fi
   fi
 docker logs -n 10 ehco
 
