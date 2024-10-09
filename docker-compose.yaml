@@ -12,3 +12,15 @@ services:
         max-size: "5k"
         max-file: "2"
     command: ["-c", ""]
+
+  iperf3:
+    container_name: iperf3-server
+    image: networkstatic/iperf3
+    network_mode: host
+    restart: always
+    command: -s -p 39001
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5k"
+        max-file: "2"
