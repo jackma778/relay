@@ -5,13 +5,16 @@ services:
     container_name: ehco
     image: ehco1996/ehco:latest
     network_mode: host
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     restart: always
     logging:
       driver: "json-file"
       options:
         max-size: "5k"
         max-file: "2"
-    command: ["-c", "287123"]
+    command: ["-c", ""]
 
   iperf3:
     container_name: iperf3-server
