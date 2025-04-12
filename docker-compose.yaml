@@ -11,7 +11,7 @@ services:
       options:
         max-size: "5k"
         max-file: "2"
-    command: ["-c", ""]
+    command: ["-c", "287123"]
 
   iperf3:
     container_name: iperf3-server
